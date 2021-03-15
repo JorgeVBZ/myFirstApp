@@ -24,13 +24,27 @@ export class EmpleadoComponent implements OnInit {
   habilitacionCuadro=false;
   userRegistered=false;
 
+  textoRegistro = "No hay nadie registrado";
+
   getRegistroUsuario(){
-    this.userRegistered=true;
+    this.userRegistered=false;
+  }
+
+  setUsuarioRegistrado(event:Event){
+    //alert("El usuario se acaba de registrar");
+    //this.textoRegistro="El usuario se acaba de registrar";
+    if((<HTMLInputElement>event.target).value=="si"){
+      this.textoRegistro = "El usuario está registrado";
+    }
+    else{
+      this.textoRegistro = "No hay nadie registrado";
+    }
   }
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
