@@ -13,7 +13,11 @@ export class EmpleadoComponent implements OnInit {
   nombre="Jorge";
   apellido="Villacastín"
   edad=24;
-  //empresa="Purgadores de Condensado S.L";
+  empresa="Purgadores De Condensado S.L";
+
+  cambiaEmpresa(event:Event){
+    this.empresa=(<HTMLInputElement>event.target).value;
+  }
 
   /*getEdad(){
 
@@ -44,6 +48,10 @@ export class EmpleadoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngModel(){
+
   }
 
 
